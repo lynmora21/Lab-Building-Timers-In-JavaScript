@@ -12,8 +12,12 @@
  */
 function delayedReminder(message, delay) {
   // Return a promise
-  // Use setTimeout to log the message after the specified delay
-  // Resolve the promise once the message is logged
+  return new Promise((resolve) => {
+    setTimeout(() => { // Use setTimeout to log the message after the specified delay
+      console.log(message);
+      resolve(); // Resolve the promise once the message is logged
+    }, delay); 
+  });
 }
 
 module.exports = { delayedReminder };
